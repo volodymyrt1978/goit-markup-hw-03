@@ -11,6 +11,29 @@
     --accessory-background-color:rgba(245, 244, 250, 1);
 }
 
+/* border box*/
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* центрирование контента */
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 /* Стилизация <body> */
 
 body {
@@ -28,6 +51,8 @@ body {
 
 .default-lists {
     list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 /* убираем подчеркивание в ссылках */
@@ -44,6 +69,8 @@ body {
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
+
+    outline: 2px solid red; /* видалити після стилізації */
 }
 
 .logo.header-start,
@@ -67,6 +94,9 @@ body {
     line-height: 1.14;
     text-decoration: none;
     letter-spacing: 0.02em;
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 
 /* Синим цветом подсвечивается активная страница */
@@ -90,21 +120,43 @@ body {
 /* стилизация секции hero. hero-title и hero-button должны иметь общий фон*/
 .hero {
     background-color: var(--primary-background-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
+}
+
+.hero-content {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-bottom: 94px;
+    text-align: center;
 }
 
 /*стилизация основного заголовка*/
 .hero-title {
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto; /* наверно это ошибка. при изменении масштаба страницы вылазит за пределы контейнера */
+    
+
+    width: 696px;
+
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
     color: var(--contrast-text-color);
     letter-spacing: 0.06em;
-    text-transform: uppercase;   
+    text-transform: uppercase;
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 
 /* Кнопка index */ /* button не наследуется из body */
 .hero-button {
+    margin-left: auto;
+    margin-right: auto; /* наверно это ошибка. при изменении масштаба страницы вылазит за пределы контейнера */
+
     font-family: Roboto, sans-serif;
     font-style: normal; 
     font-weight: 700;
@@ -117,41 +169,88 @@ body {
     color: var(--contrast-text-color);
     background-color: var(--active-link-color);
     cursor: pointer;
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 
 /* стилизация секции "Наши преимущества" */
 .advantages-title {
+    margin-bottom: 10px;
+
     /* font-weight: 700; браузер по-умолчанию*/
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     color: var(--default-text-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 
 /* стилизация секции "Чем мы занимаемся" */
+
+.trends.title {
+    margin-top: 94px;
+    margin-bottom: 50px;
+}
+
 .trends.title,
-.teamsection.title {
+.teamsection .title {
+    
     /* font-weight: 700; браузер по-умолчанию*/
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     color: var(--default-text-color);
 
+    outline: 2px solid red;
+    /* видалити після стилізації */
+
 }
 /*стилизация секции "Наша команда"*/
 .teamsection {
+    margin-top: 94px;
+    padding-top: 94px;
+    padding-bottom: 94px;
+
     background-color: var(--accessory-background-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
+}
+
+.teamsection .title {
+    margin-bottom: 50px;
 }
 
 .personal-card {
     background-color: var(--default-background-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
+}
+
+.personal-card li {
+    padding-bottom: 30px;
+}
+
+.personal-card .name{
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .personal-card .name,
 .personal-card .profession {
+    /* margin-top: 0px;
+    margin-bottom: 0px; */
+    
     font-size: 16px;
     line-height: 1.19;
     text-align: center;    
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 .name {
     font-weight: 500;
@@ -161,15 +260,41 @@ body {
 /*стилизация Footer*/ /* font-style: normal не наследуется из body*/
 .pagefoot {
     background-color: var(--primary-background-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
+
+.pagefoot-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.pagefoot li {
+    margin-bottom: 9px;
+}
+
+.pagefoot li:first-child {
+    margin-top: 20px;
+}
+.pagefoot li:last-child {
+    margin-bottom: 0;
+}
+
 .pagefoot .address {
     font-style: normal;
-    color: var(--contrast-text-color);  
+    color: var(--contrast-text-color); 
+    
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 .pagefoot .mailtel {
     font-style: normal;
     color: var(--footer-contacts-text-color);
     text-decoration: none;
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 
 .pagefoot .mailtel:hover,
@@ -188,6 +313,9 @@ body {
     color: var(--default-text-color);
     background-color: var(--accessory-background-color);
     cursor: pointer;
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -196,16 +324,39 @@ body {
 }
 
 /* Стилизация секции "Наши проекты" */
+
+.projects-content {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.projects li {
+    padding-bottom: 20px;
+}
+
+.projects-content li:first-child {
+    margin-top: 34px;
+}
+
 .projects-title {
+    margin-top: 20px;
+    margin-bottom: 4px;    
+    
     /* font-weight: 700; браузер по-умолчанию*/
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
     color:var(--default-text-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }
 
 .projects-description {
     font-size: 16px;
     line-height: 1.88;
-    color: var(--primary-text-color)
+    color: var(--primary-text-color);
+
+    outline: 2px solid red;
+    /* видалити після стилізації */
 }

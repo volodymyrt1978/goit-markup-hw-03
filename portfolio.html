@@ -16,24 +16,26 @@
 <body>
     <header>
     <!-- Section with main navigation bar -->
-        <nav>
-            <a href="./index.html" lang="en" class="default-links"><span class="logo header-start">Web</span><span class="logo header-end">Studio</span></a>
-            <ul class="default-lists">
-                <li><a href="./index.html" class="default-links navigation-link">Студия</a></li>
-                <li><a href="" class="default-links navigation-link current">Портфолио</a></li>
-                <li><a href="" class="default-links navigation-link">Контакты</a></li>
-            </ul>
-        </nav>
-
+        <div class="container">    
+            <nav>
+                <a href="./index.html" lang="en" class="default-links"><span class="logo header-start">Web</span><span class="logo header-end">Studio</span></a>
+                <ul class="default-lists">
+                    <li><a href="./index.html" class="default-links navigation-link">Студия</a></li>
+                    <li><a href="" class="default-links navigation-link current">Портфолио</a></li>
+                    <li><a href="" class="default-links navigation-link">Контакты</a></li>
+                </ul>
+            </nav>
+        
     <!-- Section with contacts -->
-        <ul class="default-lists">
-            <li><a href="mailto:info@devstudio.com" lang="en" class="default-links contacts-link">info@devstudio.com</a></li>
-            <li><a href="tel:+380961111111" class="default-links contacts-link">+38 096 111 11 11</a></li>
-        </ul>
+            <ul class="default-lists">
+                <li><a href="mailto:info@devstudio.com" lang="en" class="default-links contacts-link">info@devstudio.com</a></li>
+                <li><a href="tel:+380961111111" class="default-links contacts-link">+38 096 111 11 11</a></li>
+            </ul>
+        </div>
     </header>
     
     <main>
-        <section>
+        <section class="container projects-content">
             <h1 hidden>Наши проекты</h1>
             <ul class="default-lists">
                 <li><button type="button" class="filter-button">Все</button></li>
@@ -42,7 +44,7 @@
                 <li><button type="button" class="filter-button">Дизайн</button></li>
                 <li><button type="button" class="filter-button">Маркетинг</button></li>
             </ul>
-            <ul class="default-lists">
+            <ul class="default-lists projects">
                 <li>
                     <a href="#" class="default-links">
                         <img src="./images/portfolio_img1.jpg" alt="Ноутбук" width="370" height="294">
@@ -111,20 +113,22 @@
         </section>
     </main>
     <footer class="pagefoot">
-        <a href="./index.html" lang="en" class="default-links"><span class="logo footer-start">Web</span><span
-                class="logo footer-end">Studio</span></a>
-        <address>
-            <ul class="default-lists">
-                <li>
-                    <p class="address">г. Киев, пр-т Леси Украинки, 26</p>
-                </li>
+        <div class="container pagefoot-content">
+            <a href="./index.html" lang="en" class="default-links"><span class="logo footer-start">Web</span><span
+                    class="logo footer-end">Studio</span></a>
+            <address>
+                <ul class="default-lists">
+                    <li>
+                        <p class="address">г. Киев, пр-т Леси Украинки, 26</p>
+                    </li>
                 <!--Probably it will be link to google maps. But there is no any icons in figma-->
-                <li><a href="mailto:info@example.com" lang="en" class="default-links mailtel">info@example.com</a></li>
+                    <li><a href="mailto:info@example.com" lang="en" class="default-links mailtel">info@example.com</a></li>
                 <!--email address is different from header-->
-                <li><a href="tel:+380991111111" class="default-links mailtel">+38 099 111 11 11</a></li>
+                    <li><a href="tel:+380991111111" class="default-links mailtel">+38 099 111 11 11</a></li>
                 <!--phone number is different from header-->
-            </ul>
-        </address>
+                </ul>
+            </address>
+        </div>
     </footer>
 </body>
 </html>

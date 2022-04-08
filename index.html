@@ -16,31 +16,35 @@
 <body>
     <header>
         <!-- Section with main navigation bar -->
-        <nav>
-            <a href="" lang="en" class="default-links"><span class="logo header-start">Web</span><span class="logo header-end">Studio</span></a>
-            <ul class="default-lists">
-                <li><a href="" class="default-links navigation-link current">Студия</a></li>
-                <li><a href="./portfolio.html" class="default-links navigation-link">Портфолио</a></li>
-                <li><a href="" class="default-links navigation-link">Контакты</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="" lang="en" class="default-links"><span class="logo header-start">Web</span><span class="logo header-end">Studio</span></a>
+                    <ul class="default-lists">
+                        <li><a href="" class="default-links navigation-link current">Студия</a></li>
+                        <li><a href="./portfolio.html" class="default-links navigation-link">Портфолио</a></li>
+                        <li><a href="" class="default-links navigation-link">Контакты</a></li>
+                    </ul>
+            </nav>
 
-        <!-- Section with contacts -->
-        <ul class="default-lists">
-            <li><a href="mailto:info@devstudio.com" lang="en" class="default-links contacts-link">info@devstudio.com</a></li>
-            <li><a href="tel:+380961111111" class="default-links contacts-link">+38 096 111 11 11</a></li>
-        </ul>
+            <!-- Section with contacts -->
+            <ul class="default-lists">
+                <li><a href="mailto:info@devstudio.com" lang="en" class="default-links contacts-link">info@devstudio.com</a></li>
+                <li><a href="tel:+380961111111" class="default-links contacts-link">+38 096 111 11 11</a></li>
+            </ul>
+        </div>
     </header>
     
     <!-- Sections with main content -->
     <main>
         <section class="hero">
-            <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="hero-button">Заказать услугу</button>
+            <div class="container hero-content">
+                <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
+                <button type="button" class="hero-button">Заказать услугу</button>
+            </div>
         </section>
     
     <!-- Section with soft and tech skills -->
-        <section>
+        <section class="container">
         <!-- "Наши преимущества" I will hide during the CSS formatting-->
             <h2 hidden>Наши преимущества</h2>
                 <ul class="default-lists">
@@ -65,7 +69,7 @@
 
     <!-- Section shows wich technologies we are using -->
     
-        <section>
+        <section class="container">
             <h2 class="trends title">Чем мы занимаемся</h2>
                 <ul class="default-lists">
                     <li><img src="./images/box1_opt.jpg" alt="Программная разработка" width="370"></li>
@@ -77,42 +81,46 @@
         <!-- Section with members of our team -->
     
         <section class="teamsection">
-            <h2 class="teamsection title">Наша команда</h2>
-                <ul class="default-lists personal-card">    
-                    <li class="">
-                        <img src="./images/team_card_1_opt.jpg" alt="Игорь Демьяненко" width="270">
-                        <h3 class="name">Игорь Демьяненко</h3>
-                        <p lang="en" class="profession">Product Designer</p>
-                    </li>
-                    <li class="">   
-                        <img src="./images/team_card_2_opt.jpg" alt="Ольга Репина" width="270">
-                        <h3 class="name">Ольга Репина</h3>
-                        <p lang="en" class="profession">Frontend Developer</p>
-                    </li>
-                    <li class="">  
-                        <img src="./images/team_card_3_opt.jpg" alt="Николай Тарасов" width="270">
-                        <h3 class="name">Николай Тарасов</h3>
-                        <p lang="en" class="profession">Marketing</p>
-                    </li>
-                    <li class="">
-                        <img src="./images/team_card_4_opt.jpg" alt="Михаил Ермаков" width="270">
-                        <h3 class="name">Михаил Ермаков</h3>
-                        <p lang="en" class="profession">UI Designer</p>
-                    </li>
-                </ul>
+            <div class="container">
+                <h2 class="title">Наша команда</h2>
+                    <ul class="default-lists personal-card">    
+                        <li class="">
+                            <img src="./images/team_card_1_opt.jpg" alt="Игорь Демьяненко" width="270">
+                            <h3 class="name">Игорь Демьяненко</h3>
+                            <p lang="en" class="profession">Product Designer</p>
+                        </li>
+                        <li class="">   
+                            <img src="./images/team_card_2_opt.jpg" alt="Ольга Репина" width="270">
+                            <h3 class="name">Ольга Репина</h3>
+                            <p lang="en" class="profession">Frontend Developer</p>
+                        </li>
+                        <li class="">  
+                            <img src="./images/team_card_3_opt.jpg" alt="Николай Тарасов" width="270">
+                            <h3 class="name">Николай Тарасов</h3>
+                            <p lang="en" class="profession">Marketing</p>
+                        </li>
+                        <li class="">
+                            <img src="./images/team_card_4_opt.jpg" alt="Михаил Ермаков" width="270">
+                            <h3 class="name">Михаил Ермаков</h3>
+                            <p lang="en" class="profession">UI Designer</p>
+                        </li>
+                    </ul>
+                </div>
         </section>
     </main>
 
     <!-- Footer section -->
     <footer class="pagefoot">
-        <a href="" lang="en" class="default-links"><span class="logo footer-start">Web</span><span class="logo footer-end">Studio</span></a>
-            <address>
-                <ul class="default-lists">
-                    <li><p class="address">г. Киев, пр-т Леси Украинки, 26</p></li> <!--Probably it will be link to google maps. But there is no any icons in figma-->
-                    <li><a href="mailto:info@example.com" lang="en" class="default-links mailtel">info@example.com</a></li> <!--email address is different from header-->
-                    <li><a href="tel:+380991111111" class="default-links mailtel">+38 099 111 11 11</a></li> <!--phone number is different from header-->
-                </ul>
-            </address>
+        <div class="container pagefoot-content">
+            <a href="" lang="en" class="default-links"><span class="logo footer-start">Web</span><span class="logo footer-end">Studio</span></a>
+                <address>
+                    <ul class="default-lists">
+                        <li><p class="address">г. Киев, пр-т Леси Украинки, 26</p></li> <!--Probably it will be link to google maps. But there is no any icons in figma-->
+                        <li><a href="mailto:info@example.com" lang="en" class="default-links mailtel">info@example.com</a></li> <!--email address is different from header-->
+                        <li><a href="tel:+380991111111" class="default-links mailtel">+38 099 111 11 11</a></li> <!--phone number is different from header-->
+                    </ul>
+                </address>
+        </div>
     </footer>
 
 </body>
