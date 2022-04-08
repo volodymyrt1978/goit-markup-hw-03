@@ -1,0 +1,211 @@
+:root {
+    --primary-text-color: rgba(117, 117, 117, 1);
+    --default-text-color:rgba(33, 33, 33, 1); /*используется также и в ссылках как цвет по-умолчанию*/
+    --active-link-color: rgba(33, 150, 243, 1); /*используется в ссылках как цвет шрифта, так и цвет фона*/
+    --contrast-text-color:rgba(255, 255, 255, 1);
+    --logo-start-color:rgba(33, 150, 243, 1);
+    --logo-end-color:rgba(0, 0, 0, 1); /*только для header*/
+    --footer-contacts-text-color:rgba(255, 255, 255, 0.6);    
+    --primary-background-color: rgba(47, 48, 58, 1);
+    --default-background-color: rgba(255, 255, 255, 1);
+    --accessory-background-color:rgba(245, 244, 250, 1);
+}
+
+/* Стилизация <body> */
+
+body {
+    font-family: Roboto, sans-serif;
+    /* font-style: normal; браузер по-умолчанию*/
+    /* font-weight: 400; браузер по-умолчанию*/
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    background-color: var(--default-background-color);
+}
+
+/* убираем маркеры в списках*/
+
+.default-lists {
+    list-style: none;
+}
+
+/* убираем подчеркивание в ссылках */
+
+.default-links {
+    color: var(--default-text-color);
+    text-decoration: none;
+}
+
+/* разбиваю текст логотипа на две части по цвету шрифта*/
+
+.logo {
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+}
+
+.logo.header-start,
+.logo.footer-start {
+    color: var(--logo-start-color);
+}
+
+.logo.header-end {
+    color: var(--logo-end-color);
+}
+
+.logo.footer-end {
+    color: var(--contrast-text-color);
+}
+
+/*стилизация навигации сайта*/
+.navigation-link,
+.contacts-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+/* Синим цветом подсвечивается активная страница */
+.navigation-link.current {
+    color: var(--active-link-color);
+}
+
+/*стилизация e-mail и телефона переопределение цвета текста*/
+.contacts-link {
+    color: var(--primary-text-color)
+}
+
+/*стилизация ссылок навигации и контактов - при наведении курсора и активации*/
+.navigation-link:hover,
+.navigation-link:focus,
+.contacts-link:hover,
+.contacts-link:focus {
+    color: var(--active-link-color)
+}
+
+/* стилизация секции hero. hero-title и hero-button должны иметь общий фон*/
+.hero {
+    background-color: var(--primary-background-color);
+}
+
+/*стилизация основного заголовка*/
+.hero-title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-align: center;
+    color: var(--contrast-text-color);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;   
+}
+
+/* Кнопка index */ /* button не наследуется из body */
+.hero-button {
+    font-family: Roboto, sans-serif;
+    font-style: normal; 
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--contrast-text-color);
+    background-color: var(--active-link-color);
+    cursor: pointer;
+}
+
+/* стилизация секции "Наши преимущества" */
+.advantages-title {
+    /* font-weight: 700; браузер по-умолчанию*/
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--default-text-color);
+}
+
+/* стилизация секции "Чем мы занимаемся" */
+.trends.title,
+.teamsection.title {
+    /* font-weight: 700; браузер по-умолчанию*/
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    color: var(--default-text-color);
+
+}
+/*стилизация секции "Наша команда"*/
+.teamsection {
+    background-color: var(--accessory-background-color);
+}
+
+.personal-card {
+    background-color: var(--default-background-color);
+}
+
+.personal-card .name,
+.personal-card .profession {
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;    
+}
+.name {
+    font-weight: 500;
+    color: var(--default-text-color);
+}
+
+/*стилизация Footer*/ /* font-style: normal не наследуется из body*/
+.pagefoot {
+    background-color: var(--primary-background-color);
+}
+.pagefoot .address {
+    font-style: normal;
+    color: var(--contrast-text-color);  
+}
+.pagefoot .mailtel {
+    font-style: normal;
+    color: var(--footer-contacts-text-color);
+    text-decoration: none;
+}
+
+.pagefoot .mailtel:hover,
+.pagefoot .mailtel:focus {
+    color: var(--active-link-color)
+}
+
+/* Кнопки фільтрації portfolio */ /* button не наследуется из body */
+.filter-button {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    color: var(--default-text-color);
+    background-color: var(--accessory-background-color);
+    cursor: pointer;
+}
+.filter-button:hover,
+.filter-button:focus {
+    color: var(--contrast-text-color);
+    background-color:var(--active-link-color);
+}
+
+/* Стилизация секции "Наши проекты" */
+.projects-title {
+    /* font-weight: 700; браузер по-умолчанию*/
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color:var(--default-text-color);
+}
+
+.projects-description {
+    font-size: 16px;
+    line-height: 1.88;
+    color: var(--primary-text-color)
+}
