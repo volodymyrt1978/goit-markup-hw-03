@@ -9,6 +9,8 @@
     --primary-background-color: rgba(47, 48, 58, 1);
     --default-background-color: rgba(255, 255, 255, 1);
     --accessory-background-color:rgba(245, 244, 250, 1);
+    --projects-item-gap: 30px;
+    --default-padding-gap: 94px;
 }
 
 /* border box*/
@@ -21,8 +23,12 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 /* центрирование контента */
 
@@ -34,17 +40,9 @@ h1, h2, h3, h4, h5, h6, p {
     padding-right: 15px;
 }
 
-/* Стилизация <body> */
-
-body {
-    font-family: Roboto, sans-serif;
-    /* font-style: normal; браузер по-умолчанию*/
-    /* font-weight: 400; браузер по-умолчанию*/
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: var(--primary-text-color);
-    background-color: var(--default-background-color);
+.section {
+    padding-top: var(--default-padding-gap);
+    padding-bottom: var(--default-padding-gap);
 }
 
 /* убираем маркеры в списках*/
@@ -62,41 +60,90 @@ body {
     text-decoration: none;
 }
 
-/* разбиваю текст логотипа на две части по цвету шрифта*/
+/* утилита для построения в ряд */
 
-.logo {
+.items-in-row {
+    display: flex;
+}
+
+/* Стилизация <body> */
+
+body {
+    font-family: Roboto, sans-serif;
+    /* font-style: normal; браузер по-умолчанию*/
+    /* font-weight: 400; браузер по-умолчанию*/
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    background-color: var(--default-background-color);
+}
+
+/* разбиваю текст логотипа на две части по цвету шрифта*/
+.header-decor {
+    border-bottom: 1px solid #ECECEC;
+}
+
+.logo-header {
+    padding-top: 24px;
+    padding-bottom: 25px;
+}
+
+.logo-header,
+.logo-footer {
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
-    line-height: 1.19;
+    line-height: 1.19;}
 
-    outline: 2px solid red; /* видалити після стилізації */
-}
-
-.logo.header-start,
-.logo.footer-start {
+.logo-start {
     color: var(--logo-start-color);
 }
 
-.logo.header-end {
+.logo-header .logo-end {
+    margin-right: 0;
     color: var(--logo-end-color);
 }
 
-.logo.footer-end {
+.logo-footer .logo-end {
+    margin-right: 0;
     color: var(--contrast-text-color);
 }
 
 /*стилизация навигации сайта*/
+
+.nav-section {
+    align-items: center;
+}
+
+.nav-section .item:first-child {
+    margin-left: 93px;
+}
+
+.nav-section .item:not(:last-child) {
+    margin-right: 50px;
+}
+
 .navigation-link,
 .contacts-link {
+    display: block;
+    
+    padding-top: 32px;
+    padding-bottom: 32px;   
+
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     text-decoration: none;
     letter-spacing: 0.02em;
+}
 
-    outline: 2px solid red;
-    /* видалити після стилізації */
+.contacts {
+    margin-left: auto;
+}
+
+.contacts .item + .item {
+    margin-left: 50px;
 }
 
 /* Синим цветом подсвечивается активная страница */
@@ -105,6 +152,7 @@ body {
 }
 
 /*стилизация e-mail и телефона переопределение цвета текста*/
+
 .contacts-link {
     color: var(--primary-text-color)
 }
@@ -120,26 +168,20 @@ body {
 /* стилизация секции hero. hero-title и hero-button должны иметь общий фон*/
 .hero {
     background-color: var(--primary-background-color);
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
+    
+    text-align: center;
 }
 
 .hero-content {
     padding-top: 200px;
     padding-bottom: 200px;
-    margin-bottom: 94px;
-    text-align: center;
+    padding-left: 252px;
+    padding-right: 252px;    
 }
 
 /*стилизация основного заголовка*/
 .hero-title {
     margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto; /* наверно это ошибка. при изменении масштаба страницы вылазит за пределы контейнера */
-    
-
-    width: 696px;
 
     font-weight: 900;
     font-size: 44px;
@@ -147,13 +189,12 @@ body {
     color: var(--contrast-text-color);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
 
 /* Кнопка index */ /* button не наследуется из body */
 .hero-button {
+    padding: 10px 32px 10px 32px;
+    
     margin-left: auto;
     margin-right: auto; /* наверно это ошибка. при изменении масштаба страницы вылазит за пределы контейнера */
 
@@ -170,8 +211,9 @@ body {
     background-color: var(--active-link-color);
     cursor: pointer;
 
-    outline: 2px solid red;
-    /* видалити після стилізації */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
 }
 
 /* стилизация секции "Наши преимущества" */
@@ -183,86 +225,92 @@ body {
     line-height: 1.14;
     text-transform: uppercase;
     color: var(--default-text-color);
+}
 
-    outline: 2px solid red;
-    /* видалити після стилізації */
+.advantages-list .item:not(:last-child) {
+    margin-right: 30px;
 }
 
 /* стилизация секции "Чем мы занимаемся" */
 
-.trends.title {
-    margin-top: 94px;
-    margin-bottom: 50px;
+.trends-section {
+    padding-bottom: var(--default-padding-gap);
 }
+
+.trends-content {
+    display: flex;
+}
+
+.trends-content .item {
+    flex-basis: calc(100%/3);
+    margin-left: var(--projects-item-gap);
+}
+
+.trends-content .item:first-child {
+    margin-left: 0px;
+}
+
+.trends.title {
+    margin-bottom: 50px;}
 
 .trends.title,
-.teamsection .title {
-    
-    /* font-weight: 700; браузер по-умолчанию*/
-    font-size: 36px;
-    line-height: 1.17;
-    text-align: center;
-    color: var(--default-text-color);
+.teamsection .title 
+        {font-size: 36px;
+        line-height: 1.17;
+        text-align: center;
+        color: var(--default-text-color);}
 
-    outline: 2px solid red;
-    /* видалити після стилізації */
-
-}
 /*стилизация секции "Наша команда"*/
-.teamsection {
-    margin-top: 94px;
-    padding-top: 94px;
-    padding-bottom: 94px;
 
-    background-color: var(--accessory-background-color);
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
-}
+.teamsection 
+    {background-color: var(--accessory-background-color);}
 
 .teamsection .title {
     margin-bottom: 50px;
 }
 
-.personal-card {
-    background-color: var(--default-background-color);
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
-}
-
-.personal-card li {
-    padding-bottom: 30px;
-}
-
-.personal-card .name{
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.personal-card .name,
-.personal-card .profession {
-    /* margin-top: 0px;
-    margin-bottom: 0px; */
-    
+.card-content .name,
+.card-content .profession {
     font-size: 16px;
     line-height: 1.19;
     text-align: center;    
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
 .name {
     font-weight: 500;
     color: var(--default-text-color);
 }
 
+.team {
+    display: flex;
+}
+
+.team .item {
+    flex-basis: calc(100%/4);
+    margin-left: var(--projects-item-gap);
+
+    background-color: var(--default-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team .item:first-child {
+    margin-left: 0;
+}
+
+.item .card-content {
+    padding-top: var(--projects-item-gap);
+    padding-bottom: var(--projects-item-gap);
+}
+
+.card-content .name {
+    margin-bottom: 10px;
+}
+
 /*стилизация Footer*/ /* font-style: normal не наследуется из body*/
 .pagefoot {
     background-color: var(--primary-background-color);
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
 
 .pagefoot-content {
@@ -284,17 +332,11 @@ body {
 .pagefoot .address {
     font-style: normal;
     color: var(--contrast-text-color); 
-    
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
 .pagefoot .mailtel {
     font-style: normal;
     color: var(--footer-contacts-text-color);
     text-decoration: none;
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
 
 .pagefoot .mailtel:hover,
@@ -304,6 +346,7 @@ body {
 
 /* Кнопки фільтрації portfolio */ /* button не наследуется из body */
 .filter-button {
+    padding: 6px 22px 6px 22px;
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -314,8 +357,7 @@ body {
     background-color: var(--accessory-background-color);
     cursor: pointer;
 
-    outline: 2px solid red;
-    /* видалити після стилізації */
+    border: none;
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -323,40 +365,56 @@ body {
     background-color:var(--active-link-color);
 }
 
+.button-list .item {
+    margin-bottom: 50px;
+}
+
+.button-list .item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.button-list {
+    justify-content: center;
+}
+
 /* Стилизация секции "Наши проекты" */
-
-.projects-content {
-    padding-top: 94px;
-    padding-bottom: 94px;
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc( -1 * var(--projects-item-gap)); /*- 6px если рамка у всей карточки*/
+    margin-top: calc(-1 * var(--projects-item-gap));
 }
 
-.projects li {
-    padding-bottom: 20px;
-}
-
-.projects-content li:first-child {
-    margin-top: 34px;
+.projects .item {
+    flex-basis: calc(100%/3 - var(--projects-item-gap)); /*+ 6px если рамка у всей карточки*/
+    margin-left: var(--projects-item-gap); /*- 6px если рамка у всей карточки*/
+    margin-top: var(--projects-item-gap);
 }
 
 .projects-title {
-    margin-top: 20px;
-    margin-bottom: 4px;    
-    
     /* font-weight: 700; браузер по-умолчанию*/
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
     color:var(--default-text-color);
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
 
 .projects-description {
+    margin-top: 4px;
+
     font-size: 16px;
     line-height: 1.88;
     color: var(--primary-text-color);
-
-    outline: 2px solid red;
-    /* видалити після стилізації */
 }
+
+.projects .card-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+
