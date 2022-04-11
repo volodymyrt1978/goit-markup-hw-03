@@ -225,7 +225,7 @@ body {
     color: var(--default-text-color);
 }
 
-.advantages-list .item {
+.advantages-list .item p {
     width: 270px;
 }
 
@@ -357,6 +357,7 @@ body {
     cursor: pointer;
 
     border: none;
+    border-radius: 4px;
 }
 .filter-button:hover,
 .filter-button:focus {
