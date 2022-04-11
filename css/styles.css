@@ -312,25 +312,22 @@ body {
 
 /*стилизация Footer*/ /* font-style: normal не наследуется из body*/
 .pagefoot {
-    background-color: var(--primary-background-color);
-}
-
-.pagefoot-content {
     padding-top: 60px;
     padding-bottom: 60px;
+    background-color: var(--primary-background-color);
 }
 
 .pagefoot li {
     margin-bottom: 9px;
 }
 
-.pagefoot li:first-child {
-    margin-top: 20px;
-}
 .pagefoot li:last-child {
     margin-bottom: 0;
 }
 
+.content-position {
+    margin-top: 20px;
+}
 .pagefoot .address {
     font-style: normal;
     color: var(--contrast-text-color); 
