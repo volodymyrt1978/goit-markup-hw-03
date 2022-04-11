@@ -365,16 +365,13 @@ body {
     background-color:var(--active-link-color);
 }
 
-.button-list .item {
+.button-list {
     margin-bottom: 50px;
+    justify-content: center;
 }
 
 .button-list .item:not(:last-child) {
     margin-right: 8px;
-}
-
-.button-list {
-    justify-content: center;
 }
 
 /* Стилизация секции "Наши проекты" */
